@@ -8,14 +8,14 @@ BODY, HTML {
 #menu-bar {
 	width: 100%;
 	height: 56px;
-	background-color: #333;
+	background-color: #ECECEC;
 	margin-top:0;
 	padding:0;
 	overflow:hidden;
 }
 #menu-item {
 	height: 100%;
-	background-color: #333;
+	background-color: #ECECEC;
 	margin-left:150px;
 	margin-top:0px;
 	padding:0;
@@ -26,16 +26,18 @@ BODY, HTML {
 	padding-right: 10px;
 	float:left;
 	height: 100%;
-	background-color: #777;
-	border-left: 1px solid #000;
-	vertical-align: center;
+	background-color: #ECECEC;
+	vertical-align: text-bottom;
 	display: block;
     line-height: 56px;
+}
+#menu-item>a>li:hover {
+	background-color: #E5E5E5;
 }
 #content {
 	background-color: #567;
 	width:100%;
-	border: 1px solid #FFF;
+	border-top: 5px solid #33b5e5;
 	height: calc(100% - 60px);
 }
 #footer {
@@ -49,4 +51,5 @@ BODY, HTML {
 hr {
 	margin:0;
 	padding:0;
+	background-color: #33b5e5;
 }

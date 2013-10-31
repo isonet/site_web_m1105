@@ -6,8 +6,19 @@ BODY, HTML {
 	background-color: rgb(236, 236, 236);
 	font-family: RobotoLight, Arial, sans-serif;
 }
+a {
+	color: #333;
+	/*font-weight: bold;*/
+	text-decoration: none;
+}
+a:hover {
+	color: #333;
+	font-weight: none;
+	text-decoration: underline;
+}
 a:visited {
-	color:black;
+	color:#333;
+	text-decoration: underline;
 }
 #menu-bar {
 	width: auto;
@@ -52,6 +63,9 @@ a:visited {
 	border-bottom:5px solid #33b5e5;
 	transition: all 500ms ease;
 }
+#menu-list>li>a {
+	color: #000;
+}
 #content {
 	background-color: #ECECEC;
 	width: 70%;
@@ -60,6 +74,39 @@ a:visited {
 	border-top: 1px solid #ccc;
 	height: calc(100% - 63px);
 	overflow-y: scroll;
+}
+#wrapper>*>p {
+	color: #333;
+	letter-spacing: 0.25px;
+	line-height: 1.5;
+}
+#wrapper>*>p>a {
+	color: #33b5e5;
+	font-style: italic;
+}
+#wrapper>section>ul>li>a {
+	color: #33b5e5;
+	font-weight: none;
+}
+#wrapper>*>*>h1 {
+	color: #555;
+	letter-spacing: 1.4px;
+	line-height: 1.5;
+	text-transform: uppercase;
+	font-weight: bold;
+	font-size: 160%;
+	text-decoration: none;
+}
+#wrapper>*>a.anchor {
+	text-decoration: none;
+}
+#wrapper {
+	width: 70%;
+	height: 250%;
+	margin: 0 15% 0 15%;
+}
+section {
+	margin: 50px 0 50px 0;
 }
 #footer {
 	margin-bottom: 0;

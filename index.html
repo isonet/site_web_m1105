@@ -13,7 +13,18 @@
 		<!--Fichiers style-->
 		<link href="css/_style.css" rel="stylesheet">
 		
-	
+		<script>
+			function activate(t) {
+				var menu = document.getElementById('menu-list');
+				var list = menu.getElementsByTagName('li');
+				console.log(list.length);
+				for(var i = 1; i < list.length; i++){
+					list[i].className = '';
+				}
+				t.className = 'active';
+			}
+		
+		</script>
 	</head>
 	
 	<body>
@@ -21,11 +32,11 @@
 		<div id="menu-bar">
 			<ul id="menu-list">
 					<li id="logo"></li>
-					<li onclick="alert('est');" class="active"><a href="#statistiques">Statistiques</a></li>
-					<li class="active"><a href="#versions">Versions</a></li>
-					<li class="active"><a href="#historique">Historique</a></li>
-					<li class="active"><a href="#avantages">Avantages</a></li>
-					<li class="active"><a href="#presentation">Presentation</a></li>
+					<li onclick="activate(this);"><a href="#statistiques">Statistiques</a></li>
+					<li onclick="activate(this);"><a href="#versions">Versions</a></li>
+					<li onclick="activate(this);"><a href="#historique">Historique</a></li>
+					<li onclick="activate(this);"><a href="#avantages">Avantages</a></li>
+					<li onclick="activate(this);" class="active"><a href="#presentation">Presentation</a></li>
 			</ul>
 		</div>
 		
@@ -63,11 +74,10 @@
 						développeurs professionnels (dont certains travaillaient dans la division mobile
 						de Samsung) et amateurs passionnés de nouvelles technologies; gage de qualité et
 						de fiabilité du code source. Le système d'exploitation est aussi basé sur la dernière
-						version d'Android (<a href="http://source.android.com/" target="_blank">Android Open Source Project</a>
-						, maintenu par l'
-						<a href="http://www.openhandsetalliance.com/" target="_blank">Open Handset Alliance</a>
-						et majoritairement par
-						<a href="http://www.android.com/" target="_blank">Google</a>, lui même membre de cette dernière).
+						version d'Android (<a href="http://source.android.com/" target="_blank">Android Open Source Project</a>,
+						maintenu par l'<a href="http://www.openhandsetalliance.com/" target="_blank">Open Handset Alliance</a>
+						et majoritairement par <a href="http://www.android.com/" target="_blank">Google</a>, 
+						lui même membre de cette dernière).
 					</p>
 				</section>
 				<section>
@@ -112,17 +122,19 @@
 				</section>
 				<section>
 					<a class="anchor" name="statistiques"><h1>Statistiques</h1></a>
-					
-					<img src="img/stats.png" title="Répartition des versions en 2013"/>
+					<p>Répartition des versions en 2013</p>
+					<div id="img_stats"></div>
 				</section>
 			</div>	
 		</div>
 
 		<div id="footer">
-			<span class="icon" id="cc_icon"></span>
-			<span class="icon" id="by_icon"></span>
-			<span class="icon" id="nc_icon"></span>
-			<span class="icon" id="sa_icon"></span>
+			<a href="http://creativecommons.org/licenses/by-nc-sa/3.0/" target="_blank">
+				<span class="icon" id="cc_icon"></span>
+				<span class="icon" id="by_icon"></span>
+				<span class="icon" id="nc_icon"></span>
+				<span class="icon" id="sa_icon"></span>
+			</a>
 			<span id="copyright">&copy; Paul Biester & Clément Villanueva</span>
 		</div>
 	</body>

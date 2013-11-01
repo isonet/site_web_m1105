@@ -13,30 +13,41 @@
 		<!--Fichiers style-->
 		<link href="css/style.css" rel="stylesheet">
 		
+		<!--Petit script pour marker l'element actif-->
 		<script>
 			function activate(t) {
-				var menu = document.getElementById('menu-list');
+				var menu = document.getElementById('nav');
 				var list = menu.getElementsByTagName('li');
-				console.log(list.length);
-				for(var i = 1; i < list.length; i++){
-					list[i].className = '';
+				for(var i = 1; i < list.length; i++) {
+					list[i].classList.remove('active');
 				}
 				t.className = 'active';
 			}
-		
+			function loading() {
+				var hash = window.location.hash;
+				var menu = document.getElementById('nav');
+				var list = menu.getElementsByTagName('li');
+				for(var i = 1; i < list.length; i++) {
+					if(list[i].getElementsByTagName('a')[0].hash == hash) {
+						list[i].className = 'active';
+					} else {
+						list[i].classList.remove('active');
+					}
+				}
+			}
 		</script>
 	</head>
 	
-	<body>
+	<body onload="loading();">
 		<!--Menu de navigation-->
-		<div id="menu-bar">
-			<ul id="menu-list">
-					<li id="logo"></li>
+		<div id="nav">
+			<ul>
+					<li></li>
 					<li onclick="activate(this);"><a href="#statistiques">Statistiques</a></li>
 					<li onclick="activate(this);"><a href="#versions">Versions</a></li>
 					<li onclick="activate(this);"><a href="#historique">Historique</a></li>
 					<li onclick="activate(this);"><a href="#avantages">Avantages</a></li>
-					<li onclick="activate(this);" class="active"><a href="#presentation">Presentation</a></li>
+					<li onclick="activate(this);" class="active"><a href="#presentation">Présentation</a></li>
 			</ul>
 		</div>
 		
@@ -44,7 +55,7 @@
 		<div id="content">
 			<div id="wrapper">
 				<section>
-					<a class="anchor" id="presentation"><h1>Présentation</h1></a>
+					<a id="presentation"><h1>Présentation</h1></a>
 				
 					<p>
 						CyanogenMod est un système d'exploitation alternatif basé sur Android,
@@ -59,7 +70,7 @@
 					</p>
 				</section>
 				<section>
-					<a class="anchor" id="avantages"><h1>Avantages</h1></a>
+					<a id="avantages"><h1>Avantages</h1></a>
 					
 					<p>
 						Installer un système d'exploitation alternatif sur son mobile peut-être une
@@ -81,7 +92,7 @@
 					</p>
 				</section>
 				<section>
-					<a class="anchor" id="historique"><h1>Historique</h1></a>
+					<a id="historique"><h1>Historique</h1></a>
 					
 					<p>
 						CyanogenMod découle de l'initiative d'un développeur nommé Steve Kondik (alias Cyanogen).
@@ -93,7 +104,7 @@
 					</p>
 				</section>
 				<section>
-					<a class="anchor" id="versions"><h1>Versions</h1></a>
+					<a id="versions"><h1>Versions</h1></a>
 				
 					<ul>
 							<li>
@@ -121,21 +132,21 @@
 					</ul>
 				</section>
 				<section>
-					<a class="anchor" id="statistiques"><h1>Statistiques</h1></a>
+					<a id="statistiques"><h1>Statistiques</h1></a>
 					<p>Répartition des versions en 2013</p>
-					<div id="img_stats"></div>
+					<div></div>
 				</section>
 			</div>	
 		</div>
 
 		<div id="footer">
 			<a href="http://creativecommons.org/licenses/by-nc-sa/3.0/" target="_blank">
-				<span class="icon" id="cc_icon"></span>
-				<span class="icon" id="by_icon"></span>
-				<span class="icon" id="nc_icon"></span>
-				<span class="icon" id="sa_icon"></span>
+				<span></span>
+				<span></span>
+				<span></span>
+				<span></span>
 			</a>
-			<span id="copyright">&copy; Paul Biester & Clément Villanueva</span>
+			<span>&copy; Paul Biester & Clément Villanueva</span>
 		</div>
 	</body>
 </html>

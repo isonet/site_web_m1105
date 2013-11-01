@@ -20,7 +20,7 @@ a:visited {
 	color:#333;
 	text-decoration: underline;
 }
-#menu-bar {
+#nav {
 	width: auto;
 	height: 56px;
 	margin: 0 15% auto 15%;
@@ -28,11 +28,11 @@ a:visited {
 	overflow:hidden;
 	background: rgb(236, 236, 236);
 }
-#menu-list {
+#nav>ul {
 	padding:0;
 	margin: 0;
 }
-#menu-list>li {
+#nav>ul>li {
 	padding-left: 10px;
 	padding-right: 10px;
 	vertical-align: text-bottom;
@@ -42,14 +42,14 @@ a:visited {
 	list-style-type: none;
 	list-style-position: inside;
 }
-#menu-list>li>a {
+#nav>ul>li>a {
 	text-decoration: none;
 	height: 56px;
 	display: inline-block;
 	box-sizing: border-box;
 	border-color:#33b5e5;
 }
-#menu-list>li#logo {
+#nav>ul>li:first-child {
 	background-image: url('../img/logo.png');
 	width: 213px;
 	height: 56px;
@@ -59,14 +59,14 @@ a:visited {
 	margin-left:5px;
 	float: left;
 }
-#menu-list>li.active>a {
+#nav>ul>li.active>a {
 	border-bottom: 3px solid #33b5e5;
 }
-#menu-list>li>a:hover {
+#nav>ul>li>a:hover {
 	border-bottom: 3px solid #33b5e5;
 	transition: all 500ms ease;
 }
-#menu-list>li>a {
+#nav>ul>li>a {
 	color: #000;
 }
 #content {
@@ -100,7 +100,7 @@ a:visited {
 	font-size: 160%;
 	text-decoration: none;
 }
-#wrapper>*>a.anchor {
+#wrapper>section>a:first-child {
 	text-decoration: none;
 }
 #wrapper {
@@ -114,7 +114,7 @@ section {
 section:last-of-type {
 	margin: 0 0 39% 0;
 }
-#img_stats{
+section:last-of-type>div {
 	background-size: 617px 545px;
 	height: 545px;
 	background-repeat: no-repeat;
@@ -133,10 +133,10 @@ section:last-of-type {
 	color: #777;
 	line-height: 23px;
 }
-#footer>#copyright {
+#footer>span {
 	float: right;
 }
-#footer>a>span.icon {
+#footer>a>span {
 	background-size: 20px 20px;
 	height: 20px;
 	background-repeat: no-repeat;
@@ -145,16 +145,16 @@ section:last-of-type {
 	margin-top: 2px;
 	opacity: 0.8;
 }
-#footer>a>#cc_icon {
+#footer>a>span:nth-child(1){
 	background-image: url('../img/chooser_cc.png');
 }
-#footer>a>#by_icon {
+#footer>a>span:nth-child(2) {
 	background-image: url('../img/chooser_by.png');
 }
-#footer>a>#nc_icon {
+#footer>a>span:nth-child(3) {
 	background-image: url('../img/chooser_nc.png');
 }
-#footer>a>#sa_icon {
+#footer>a>span:nth-child(4) {
 	background-image: url('../img/chooser_sa.png');
 }
 ::-webkit-scrollbar {

@@ -14,33 +14,12 @@
 		<link href="css/style.css" rel="stylesheet">
 		
 		<!--Petit script pour marker l'element actif-->
-		<script>
-			function activate(t) {
-				var menu = document.getElementById('nav');
-				var list = menu.getElementsByTagName('li');
-				for(var i = 1; i < list.length; i++) {
-					list[i].classList.remove('active');
-				}
-				t.className = 'active';
-			}
-			function loading() {
-				var hash = window.location.hash;
-				var menu = document.getElementById('nav');
-				var list = menu.getElementsByTagName('li');
-				for(var i = 1; i < list.length; i++) {
-					if(list[i].getElementsByTagName('a')[0].hash == hash) {
-						list[i].className = 'active';
-					} else {
-						list[i].classList.remove('active');
-					}
-				}
-			}
-		</script>
+		<script src="js/main.js"></script>
 	</head>
 	
 	<body onload="loading();">
 		<!--Menu de navigation-->
-		<div id="nav">
+		<nav>
 			<ul>
 					<li></li>
 					<li onclick="activate(this);"><a href="#statistiques">Statistiques</a></li>
@@ -49,11 +28,11 @@
 					<li onclick="activate(this);"><a href="#avantages">Avantages</a></li>
 					<li onclick="activate(this);" class="active"><a href="#presentation">Présentation</a></li>
 			</ul>
-		</div>
+		</nav>
 		
 		<!--Contenu-->
-		<div id="content">
-			<div id="wrapper">
+		<div  onmousewheel="scrolling();">
+			<div>
 				<section>
 					<a id="presentation"><h1>Présentation</h1></a>
 				
@@ -139,7 +118,7 @@
 			</div>	
 		</div>
 
-		<div id="footer">
+		<footer>
 			<a href="http://creativecommons.org/licenses/by-nc-sa/3.0/" target="_blank">
 				<span></span>
 				<span></span>
@@ -147,6 +126,6 @@
 				<span></span>
 			</a>
 			<span>&copy; Paul Biester & Clément Villanueva</span>
-		</div>
+		</footer>
 	</body>
 </html>

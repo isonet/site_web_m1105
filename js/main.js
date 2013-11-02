@@ -8,6 +8,7 @@ function activate(t) {
 	}
 	t.className = 'active';
 	lastSelected.classList.remove('selected');
+	lastSelected.removeAttribute("style");
 	lastSelected = document.getElementById(t.getElementsByTagName('a')[0].hash.substring(1)).parentNode;
 	lastSelected.className = 'selected';
 }
@@ -29,5 +30,6 @@ function loading() {
 function scrolling() {
 	if(loaded) {
 		lastSelected.classList.remove('selected');
+		lastSelected.style.transition = 'padding-top 2s ease, padding-bottom 2s ease';
 	}
 }

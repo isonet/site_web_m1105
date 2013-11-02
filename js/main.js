@@ -7,12 +7,14 @@ function activate(t) {
 		list[i].classList.remove('active');
 	}
 	t.className = 'active';
-	lastSelected.classList.remove('selected');
-	lastSelected.removeAttribute("style");
+	if(lastSelected) {
+		lastSelected.classList.remove('selected');
+		lastSelected.removeAttribute("style");
+	}
 	lastSelected = document.getElementById(t.getElementsByTagName('a')[0].hash.substring(1)).parentNode;
 	lastSelected.className = 'selected';
 }
-function loading() {
+function load() {
 	var hash = window.location.hash;
 	var menu = document.getElementsByTagName('nav')[0];
 	var list = menu.getElementsByTagName('li');
@@ -23,8 +25,11 @@ function loading() {
 			list[i].classList.remove('active');
 		}
 	}
-	lastSelected = document.getElementById(hash.substring(1)).parentNode;
-	lastSelected.className = 'selected';
+	if(document.getElementById(hash.substring(1))) {
+		lastSelected = document.getElementById(hash.substring(1)).parentNode;
+		lastSelected.className = 'selected';
+		console.log('ok');
+	}
 	loaded = true;
 }
 function scrolling() {

@@ -104,6 +104,14 @@ div>div>section>p>a {
 	color: #33b5e5;
 	font-style: italic;
 }
+div>div>section>p>a:hover, div>div>section>ul>li>a:hover {
+	color: #33b5e5;
+	text-decoration: underline;
+}
+div>div>section>p>a:visited, div>div>section>ul>li>a:visited {
+	color: #33b5e5;
+	font-style: italic;
+}
 div>div>section>ul>li>a {
 	color: #33b5e5;
 	font-weight: normal;

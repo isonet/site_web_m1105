@@ -21,6 +21,22 @@ function load() {
 	if(document.getElementById(hash.substring(1))) {
 		animateSection(hash.substring(1));
 	}
+	/*	BEGIN MOBILE WORKAROUND      */
+	if(isTouchDevice()){ //if touch events exist...
+		var el=document.getElementsByTagName('div')[1];
+		var scrollStartPos=0;
+ 
+		el.addEventListener("touchstart", function(event) {
+			scrollStartPos=this.scrollTop+event.touches[0].pageY;
+			event.preventDefault();
+		},false);
+ 
+		el.addEventListener("touchmove", function(event) {
+			this.scrollTop=scrollStartPos-event.touches[0].pageY;
+			event.preventDefault();
+		},false);
+	}
+	/*	END MOBILE WORKAROUND        */
 	loaded = true;
 }
 function scrolling() {
